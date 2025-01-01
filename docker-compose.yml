@@ -1,0 +1,29 @@
+# services:
+#   bind9:
+#     container_name: bind9
+#     image: ubuntu/bind9
+#     ports:
+#       - "54:53/tcp"
+#       - "54:53/udp"
+#     restart: always
+#     volumes:
+#       - bind9-data:/etc/bind
+
+# volumes:
+#   bind9-data:
+
+services:
+  bind9:
+    container_name: dns-auth-srv
+    image: ubuntu/bind9:latest
+    environment:
+      - BIND9_USER=root
+      - TZ=Europe/Jerusalem
+    ports:
+      - "127.0.0.1:53:53/tcp"
+      - "127.0.0.1:53:53/udp"
+    volumes:
+      - ./config:/etc/bind
+      - ./cache/example.com.db:/var/cache/bind/example.com.db
+      - ./cache/liela.com.db:/var/cache/bind/liela.com.db
+    restart: unless-stopped

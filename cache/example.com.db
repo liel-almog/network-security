@@ -1,0 +1,15 @@
+$TTL 1D
+@       IN      SOA     ns.example.com. contact.example.com. (
+                        20241218
+                        1H
+                        1H
+                        1H
+                        1H)
+
+www     IN      A       10.0.2.1
+mail    IN      A       8.8.8.8
+ns.example.com. IN      A       1.2.3.4
+ns2.example.com.        IN      A       1.2.3.4
+example.com.    IN      NS      ns.example.com.
+example.com.    IN      NS      ns2.example.com.
+example.com.    IN      MX      10 main.example.com
