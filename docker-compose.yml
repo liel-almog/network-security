@@ -24,6 +24,5 @@ services:
       - "127.0.0.1:53:53/udp"
     volumes:
       - ./config:/etc/bind
-      - ./cache/example.com.db:/var/cache/bind/example.com.db
-      - ./cache/liela.com.db:/var/cache/bind/liela.com.db
+      - ./cache:/var/cache/bind
     restart: unless-stopped
