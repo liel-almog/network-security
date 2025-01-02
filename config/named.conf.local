@@ -9,8 +9,3 @@ zone "example.com" {
         type master;
         file "/var/cache/bind/example.com.db";
 };
-
-zone "liela.com" {
-        type master;
-        file "/var/cache/bind/liela.com.db";
-};      
